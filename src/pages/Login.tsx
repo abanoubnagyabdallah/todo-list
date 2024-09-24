@@ -4,7 +4,7 @@ import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
-import InputErrorMessage from "../components/ui/InputErrorMessage";
+import InputErrorMessage from "../components/InputErrorMessage";
 import Button from "../components/ui/Button";
 import Input from "../components/ui/Input";
 import axiosInstance from "../config/axios.config";
@@ -18,6 +18,7 @@ interface IFormInput {
 }
 
 const LoginPage = () => {
+
   const [isLoading, setIsLoading] = useState(false);
   const {
     register,

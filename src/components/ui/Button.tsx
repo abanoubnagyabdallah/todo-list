@@ -8,12 +8,9 @@ const buttonVariants = cva(
     variants: {
       variant: {
         // ** FILLED
-        default:
-          "bg-slate-900 dark:bg-indigo-600 dark:text-white dark:hover:bg-indigo-700",
-        danger:
-          "bg-red-900 dark:bg-[#c2344d] dark:text-white dark:hover:bg-red-700",
-        cancel:
-          "bg-gray-300 text-gray-700 dark:bg-[#f5f5fa] dark:text-dark hover:bg-gray-400 dark:hover:bg-gray-200",
+        default: "bg-slate-900 dark:bg-indigo-600 dark:text-white dark:hover:bg-indigo-700",
+        danger: "bg-red-900 dark:bg-[#c2344d] dark:text-white dark:hover:bg-red-700",
+        cancel: "bg-gray-300 text-gray-700 dark:bg-[#f5f5fa] dark:text-dark hover:bg-gray-400 dark:hover:bg-gray-200",
 
         // ** OUTLINE
         outline:
@@ -34,24 +31,13 @@ const buttonVariants = cva(
   }
 );
 
-interface ButtonProps
-  extends HTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+interface ButtonProps extends HTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   children: ReactNode;
   isLoading?: boolean;
   type?: "submit" | "button" | "reset";
 }
 
-const Button = ({
-  variant,
-  size,
-  fullWidth,
-  isLoading,
-  className,
-  children,
-  type,
-  ...props
-}: ButtonProps) => {
+const Button = ({ type, variant, size, fullWidth, isLoading, className, children, ...props }: ButtonProps) => {
   return (
     <button
       type={type}
@@ -66,14 +52,7 @@ const Button = ({
           fill="none"
           viewBox="0 0 24 24"
         >
-          <circle
-            className="opacity-25"
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="currentColor"
-            strokeWidth="4"
-          ></circle>
+          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
           <path
             className="opacity-75"
             fill="currentColor"

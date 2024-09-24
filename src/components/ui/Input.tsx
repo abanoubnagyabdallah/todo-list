@@ -1,8 +1,8 @@
-import { forwardRef, InputHTMLAttributes, Ref } from "react";
+import { InputHTMLAttributes, Ref, forwardRef } from "react";
 
-interface IProps extends InputHTMLAttributes<HTMLInputElement> { }
+interface IProps extends InputHTMLAttributes<HTMLInputElement> {}
 
-const Input = forwardRef(({ ...rest }: IProps, ref:Ref<HTMLInputElement>) => {
+const Input = forwardRef(({ ...rest }: IProps, ref: Ref<HTMLInputElement>) => {
   return (
     <input
       ref={ref}
@@ -10,6 +10,6 @@ const Input = forwardRef(({ ...rest }: IProps, ref:Ref<HTMLInputElement>) => {
       {...rest}
     />
   );
-})
+});
 
 export default Input;
